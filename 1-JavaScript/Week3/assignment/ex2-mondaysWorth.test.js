@@ -31,8 +31,19 @@ const mondayTasks = [
 
 const hourlyRate = 25;
 
-function computeEarnings(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+function computeEarnings(tasks, hourlyRate) {
+  const duration = tasks
+    .map((task) => task.duration)
+    .map((duration) => (duration / 60) * hourlyRate)
+    .reduce((acc, curr) => acc + curr);
+
+  /* *************** This is more not passed to test file because of the format of the output but this is the correct way to do it ***************
+  return new Intl.NumberFormat('nl-NL', {
+    style: 'currency',
+    currency: 'EUR',
+  }).format(duration);
+	*/
+  return `€${duration.toFixed(2)}`;
 }
 
 // ! Unit tests (using Jest)
