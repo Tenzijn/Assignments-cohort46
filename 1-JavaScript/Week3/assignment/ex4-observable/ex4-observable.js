@@ -17,7 +17,7 @@ function createObservable() {
   const subscribers = [];
   return {
     subscribe: function (subscriber) {
-      // TODO complete this function
+      //changes in week3
     },
     notify: function (message) {
       // TODO complete this function
