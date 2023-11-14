@@ -23,8 +23,18 @@ you have more than 3 items in your shopping cart the first item gets taken out.
 const shoppingCart = ['bananas', 'milk'];
 
 // ! Function to be tested
-function addToShoppingCart(/* parameters go here */) {
-  // TODO complete this function
+function addToShoppingCart(grocery) {
+  if (grocery) {
+    if (shoppingCart.length === 3) {
+      shoppingCart.shift();
+      shoppingCart.push(grocery);
+    } else {
+      shoppingCart.push(grocery);
+    }
+    return `You bought ${shoppingCart.join(', ')}!`;
+  } else {
+    return `You bought ${shoppingCart.join(', ')}!`;
+  }
 }
 
 // ! Test functions (plain vanilla JavaScript)
@@ -33,13 +43,16 @@ function test1() {
     'Test 1: addShoppingCart() called without an argument should leave the shopping cart unchanged'
   );
   const expected = 'You bought bananas, milk!';
+  // console.log(`Expected : ${expected}`);
   const actual = addToShoppingCart();
+
   console.assert(actual === expected);
 }
 
 function test2() {
   console.log('Test 2: addShoppingCart() should take one parameter');
   const expected = 1;
+  // console.log(`Expected : ${expected}`);
   const actual = addToShoppingCart.length;
   console.assert(actual === expected);
 }
@@ -47,6 +60,7 @@ function test2() {
 function test3() {
   console.log('Test 3: `chocolate` should be added');
   const expected = 'You bought bananas, milk, chocolate!';
+  // console.log(`Expected : ${expected}`);
   const actual = addToShoppingCart('chocolate');
   console.assert(actual === expected);
 }
@@ -54,6 +68,7 @@ function test3() {
 function test4() {
   console.log('Test 4: `waffles` should be added and `bananas` removed');
   const expected = 'You bought milk, chocolate, waffles!';
+  // console.log(`Expected : ${expected}`);
   const actual = addToShoppingCart('waffles');
   console.assert(actual === expected);
 }
@@ -61,6 +76,7 @@ function test4() {
 function test5() {
   console.log('Test 5: `tea` should be added and `milk` removed');
   const expected = 'You bought chocolate, waffles, tea!';
+  // console.log(`Expected : ${expected}`);
   const actual = addToShoppingCart('tea');
   console.assert(actual === expected);
 }

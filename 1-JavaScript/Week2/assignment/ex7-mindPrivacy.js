@@ -30,8 +30,26 @@ const employeeRecords = [
 ];
 
 // ! Function under test
-function filterPrivateData(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+function filterPrivateData(employeeList) {
+  return employeelist.map(({ name, occupation, email }) => ({
+    name,
+    occupation,
+    email,
+  }));
+  // ! Alternative solution
+  /*
+
+  const requiredProperties = ['name', 'occupation', 'email'];
+
+  const filteredEmployeeRecords = employeeList.map((employee) => {
+    const filteredEmployee = {};
+    requiredProperties.forEach((property) => {
+      filteredEmployee[property] = employee[property];
+    });
+    return filteredEmployee;
+  });
+  return filteredEmployeeRecords;
+	*/
 }
 
 // ! Test functions (plain vanilla JavaScript)

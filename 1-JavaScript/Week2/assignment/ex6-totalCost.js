@@ -21,11 +21,19 @@ instead!
 3. Complete the unit test functions and verify that all is working as expected.
 -----------------------------------------------------------------------------*/
 const cartForParty = {
-  // TODO complete this object
+  beers: '5.32',
+  chips: '2.90',
+  coke: '1,49',
+  cups: '0.38',
+  fruits: '3.40',
 };
 
-function calculateTotalPrice(/* TODO parameter(s) go here */) {
-  // TODO replace this comment with your code
+function calculateTotalPrice(items) {
+  let totalPrice = 0;
+  for (let key in items) {
+    totalPrice += items[key];
+  }
+  return totalPrice;
 }
 
 // ! Test functions (plain vanilla JavaScript)
@@ -37,6 +45,7 @@ function test1() {
 function test2() {
   console.log('\nTest 2: return correct output when passed cartForParty');
   // TODO replace this comment with your code
+  calculateTotalPrice(cartForParty);
 }
 
 function test() {

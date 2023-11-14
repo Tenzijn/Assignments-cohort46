@@ -1,6 +1,6 @@
 'use strict';
 /*------------------------------------------------------------------------------
-Full description at: https://github.com/HackYourFuture/Assignment/tree/main/1-JavaScript/Week3#exercise-2-dog-years
+Full description at: https://github.com/HackYourFuture/Homework/tree/main/1-JavaScript/Week3#exercise-2-dog-years
 
 You know how old your dog is in human years, but what about dog years? Let's
 calculate it!
@@ -16,8 +16,12 @@ calculate it!
    ages.
 -----------------------------------------------------------------------------*/
 
-function calculateDogAge(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+function ageCal(dogAge) {
+  return dogAge * 7;
+}
+
+function calculateDogAge(number) {
+  return `Your doggie is ${ageCal(number)} years old in dog years!`;
 }
 
 function main() {

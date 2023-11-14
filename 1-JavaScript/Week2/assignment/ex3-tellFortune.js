@@ -1,6 +1,6 @@
 'use strict';
 /*------------------------------------------------------------------------------
-Full description at: https://github.com/HackYourFuture/Assignments/tree/main/1-JavaScript/Week3#exercise-3-be-your-own-fortune-teller
+Full description at: https://github.com/HackYourFuture/Homework/tree/main/1-JavaScript/Week3#exercise-3-be-your-own-fortune-teller
 
 Why pay a fortune teller when you can just program your fortune yourself?
 
@@ -33,30 +33,26 @@ body, this code is now written once only in a separated function.
 
 // This function should take an array as its parameter and return
 // a randomly selected element as its return value.
-function selectRandomly(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+function selectRandomly(info) {
+  return info[Math.floor(Math.random() * (3 - 0 + 1))];
 }
 
-function tellFortune(/* TODO add parameter(s) here */) {
-  // TODO complete this function
+function tellFortune(numKids, partnerName, locations, jobTitles) {
+  return `You will be a ${selectRandomly(jobTitles)} in ${selectRandomly(
+    locations
+  )}, married to ${selectRandomly(partnerName)} with ${selectRandomly(
+    numKids
+  )} kids.`;
 }
 
 function main() {
-  const numKids = [
-    // TODO add elements here
-  ];
+  const numKids = [2, 1, 4, 3];
 
-  const partnerNames = [
-    // TODO add elements here
-  ];
+  const partnerNames = ['Jonson', 'Michel', 'Lina', 'Anna'];
 
-  const locations = [
-    // TODO add elements here
-  ];
+  const locations = ['Amsterdam', 'London', 'Tokyo', 'Tibet'];
 
-  const jobTitles = [
-    // TODO add elements here
-  ];
+  const jobTitles = ['CEO', 'Teacher', 'Driver', 'DevOps'];
 
   console.log(tellFortune(numKids, partnerNames, locations, jobTitles));
   console.log(tellFortune(numKids, partnerNames, locations, jobTitles));
