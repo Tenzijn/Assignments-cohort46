@@ -31,7 +31,7 @@ function giveCompliment(name) {
     'hardworking',
     'pure heart',
   ];
-  const randomNumMaxToMin = Math.floor(Math.random() * (compliments.length + 1)); //To find random number between Max and Min
+  const randomNumMaxToMin = Math.floor(Math.random() * (compliments.length)); //To find random number between Max and Min
   const compliment = `You are ${compliments[randomNumMaxToMin]}, ${name}!`; //To find compliment
   return compliment;
 }
