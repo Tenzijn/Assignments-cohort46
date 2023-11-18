@@ -31,9 +31,11 @@ function giveCompliment(name) {
     'hardworking',
     'pure heart',
   ];
-  return `You are ${
-    compliments[Math.floor(Math.random() * (9 - 0 + 1) + 0)] //This is will you random number between 0-9
-  }, ${name}!`;
+  const max = 9; //max random number
+  const min = 0; //min random number
+  const randomNumMaxToMin = Math.floor(Math.random() * (max - min + 1) + min); //To find random number between Max and Min
+  const compliment = `You are ${compliments[randomNumMaxToMin]}, ${name}!`; //To find compliment
+  return compliment;
 }
 
 function main() {

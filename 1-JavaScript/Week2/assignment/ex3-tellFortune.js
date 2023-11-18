@@ -34,15 +34,21 @@ body, this code is now written once only in a separated function.
 // This function should take an array as its parameter and return
 // a randomly selected element as its return value.
 function selectRandomly(info) {
-  return info[Math.floor(Math.random() * (3 - 0 + 1))];
+  const max = 3; //max random number
+  const min = 0; //min random number
+  const randomNumMaxToMin = Math.floor(Math.random() * (max - min + 1) + min); //To find random number between Max and Min
+  const selectedInfo = info[randomNumMaxToMin]; //To find random info
+  return selectedInfo;
 }
 
 function tellFortune(numKids, partnerName, locations, jobTitles) {
-  return `You will be a ${selectRandomly(jobTitles)} in ${selectRandomly(
-    locations
-  )}, married to ${selectRandomly(partnerName)} with ${selectRandomly(
-    numKids
-  )} kids.`;
+  const job = selectRandomly(jobTitles);
+  const location = selectRandomly(locations);
+  const partner = selectRandomly(partnerName);
+  const kids = selectRandomly(numKids);
+  const fortune = `You will be a ${job} in ${location}, married to ${partner} with ${kids} kids.`;
+
+  return fortune;
 }
 
 function main() {
