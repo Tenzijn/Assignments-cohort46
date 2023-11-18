@@ -34,9 +34,7 @@ body, this code is now written once only in a separated function.
 // This function should take an array as its parameter and return
 // a randomly selected element as its return value.
 function selectRandomly(info) {
-  const max = 3; //max random number
-  const min = 0; //min random number
-  const randomNumMaxToMin = Math.floor(Math.random() * (max - min + 1) + min); //To find random number between Max and Min
+  const randomNumMaxToMin = Math.floor(Math.random() * (info.length + 1)); //To find random number between Max and Min
   const selectedInfo = info[randomNumMaxToMin]; //To find random info
   return selectedInfo;
 }
