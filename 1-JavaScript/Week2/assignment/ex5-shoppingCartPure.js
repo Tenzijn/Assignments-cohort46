@@ -17,10 +17,10 @@ it pure. Do the following:
 ------------------------------------------------------------------------------*/
 // ! Function under test
 function addToShoppingCart(shoppingCart, grocery) {
-  const newShoppingCart = [...shoppingCart];
-  newShoppingCart.splice(2, 1);
-  newShoppingCart.push(grocery);
-  console.log(newShoppingCart);
+  const newShoppingCart = [...shoppingCart,grocery].slice(-3);
+  // newShoppingCart.splice(2, 1);
+  // newShoppingCart.push(grocery);
+  // console.log(newShoppingCart);
   return newShoppingCart;
 }
 
