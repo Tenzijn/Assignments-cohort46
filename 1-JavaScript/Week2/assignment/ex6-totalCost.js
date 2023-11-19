@@ -21,18 +21,24 @@ instead!
 3. Complete the unit test functions and verify that all is working as expected.
 -----------------------------------------------------------------------------*/
 const cartForParty = {
-  beers: '5.32',
-  chips: '2.90',
-  coke: '1,49',
-  cups: '0.38',
-  fruits: '3.40',
+  beers: 5.32,
+  chips: 2.9,
+  coke: 1.49,
+  cups: 0.38,
+  fruits: 3.4,
 };
 
 function calculateTotalPrice(items) {
   let totalPrice = 0;
-  for (let key in items) {
+  const cartItems = Object.values(items);
+  cartItems.forEach((item) => {
+    totalPrice += item;
+  });
+  /*
+  for (const key in items) {
     totalPrice += items[key];
   }
+*/
   return totalPrice;
 }
 
