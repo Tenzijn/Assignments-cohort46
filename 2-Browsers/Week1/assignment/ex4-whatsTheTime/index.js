@@ -1,4 +1,7 @@
 'use strict';
+
+// const { get } = require('lodash');
+
 /*------------------------------------------------------------------------------
 Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-Browsers/Week1#exercise-4-whats-the-time
 
@@ -7,8 +10,18 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
   second). Use `setInterval()` to make sure the time stays current.
 2. Have the function execute when it's loading in the browser.
 ------------------------------------------------------------------------------*/
+const clock = document.querySelector('#time');
 function addCurrentTime() {
   // TODO complete this function
+  const now = new Date();
+  const time = now.toLocaleTimeString(undefined, {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  });
+  clock.textContent = time;
+  console.log(time);
 }
 
 // TODO execute `addCurrentTime` when the browser has completed loading the page
+window.addEventListener('load', setInterval(addCurrentTime, 1000));

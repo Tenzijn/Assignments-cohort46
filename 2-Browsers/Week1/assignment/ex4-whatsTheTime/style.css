@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* dark theme */
+
+body {
+  background-color: #333;
+  color: #fff;
+}
+
+.time-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 2rem;
+}
+
+h1 {
+  display: block;
+}
+
+#time {
+  font-size: 5rem;
+}
