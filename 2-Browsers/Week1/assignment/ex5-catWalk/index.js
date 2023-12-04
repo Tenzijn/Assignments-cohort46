@@ -21,8 +21,11 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 
    https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif
 -----------------------------------------------------------------------------*/
+const catWalkImageRef = document.querySelector('img');
+
 function catWalk() {
   // TODO complete this function
 }
 
 // TODO execute `catWalk` when the browser has completed loading the page
+window.addEventListener('load', setInterval(catWalk, 50));
