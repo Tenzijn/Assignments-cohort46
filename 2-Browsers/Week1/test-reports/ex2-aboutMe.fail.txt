@@ -1,0 +1,7 @@
+
+*** Spell Checker Report ***
+
+/Users/tenzin/Documents/GitHub/Assignments-cohort46/2-Browsers/Week1/assignment/ex2-aboutMe/index.js:12:18 - Unknown word (Tenzijn)
+/Users/tenzin/Documents/GitHub/Assignments-cohort46/2-Browsers/Week1/assignment/ex2-aboutMe/index.js:12:29 - Unknown word (momo)
+/Users/tenzin/Documents/GitHub/Assignments-cohort46/2-Browsers/Week1/assignment/ex2-aboutMe/index.js:12:37 - Unknown word (Karze)
+/Users/tenzin/Documents/GitHub/Assignments-cohort46/2-Browsers/Week1/assignment/ex2-aboutMe/index.js:12:43 - Unknown word (Kham)

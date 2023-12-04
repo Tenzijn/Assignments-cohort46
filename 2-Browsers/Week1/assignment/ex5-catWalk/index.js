@@ -1,6 +1,5 @@
 'use strict';
 
-
 // const { set } = require("lodash");
 
 /*------------------------------------------------------------------------------
@@ -28,37 +27,40 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 const catWalkImage = document.querySelector('img');
 catWalkImage.style.left = '0px';
 const catWalkImageRef = catWalkImage.src;
-const catDanceImage = 'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
+const catDanceImage =
+  'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
 let imgPositionTracker = 0;
 
-const changeImageBack = function(){
-	catWalkIntervalCaller = setInterval(catWalk, 50);
-	catWalkImage.setAttribute('src', catWalkImageRef);
-}
+const changeImageBack = function () {
+  catWalkIntervalCaller = setInterval(catWalk, 50);
+  catWalkImage.setAttribute('src', catWalkImageRef);
+};
 
 function catWalk() {
-	// TODO complete this function
-	// to get window width
- 	const windowWidth = window.innerWidth;	
-	// to get current position of cat
-	const imgPosition = parseInt(catWalkImage.style.left);
-	// shift cat by 10px left  
-		catWalkImage.style.left = imgPosition + 10 + 'px';
-	// if cat reaches the end of window, reset position to 0px but -250px to hide the cat and gives effect of coming from behind
-		if (imgPosition > windowWidth) {
-			catWalkImage.style.left = '-250px';
-	}
+  // to get window width
+  const windowWidth = window.innerWidth;
+  // to get current position of cat
+  const imgPosition = parseInt(catWalkImage.style.left);
+  // shift cat by 10px left
+  catWalkImage.style.left = imgPosition + 10 + 'px';
+  // if cat reaches the end of window, reset position to 0px but -250px to hide the cat and gives effect of coming from behind
+  if (imgPosition > windowWidth) {
+    catWalkImage.style.left = '-250px';
+  }
 
-	// if cat reaches the middle of window, stop the cat and change image to dancing cat
-	//this logic : there is only one time that position of cat before is less than half of window width and position of cat now is more than half of window width
-	// I use this because since we are adding 10px after each interval, it is not possible to have exact position of half of window width
-	if(imgPositionTracker < (windowWidth/2) && imgPosition > (windowWidth/2) ){
-		imgPositionTracker = imgPosition;
-		clearInterval(catWalkIntervalCaller);
-		catWalkImage.setAttribute('src', catDanceImage);
-			setTimeout(changeImageBack, 5000);
-	}
+  // if cat reaches the middle of window, stop the cat and change image to dancing cat
+  //this logic : there is only one time that position of cat before is less than half of window width and position of cat now is more than half of window width
+  // I use this because since we are adding 10px after each interval, it is not possible to have exact position of half of window width
+  if (imgPositionTracker < windowWidth / 2 && imgPosition > windowWidth / 2) {
+    catWalkImage.style.left = windowWidth / 2 - 150 + 'px';
+    imgPositionTracker = imgPosition;
+    clearInterval(catWalkIntervalCaller);
+    catWalkImage.setAttribute('src', catDanceImage);
+    setTimeout(changeImageBack, 5000);
+  }
+  imgPositionTracker = imgPosition;
 }
 
-// TODO execute `catWalk` when the browser has completed loading the page
 let catWalkIntervalCaller = setInterval(catWalk, 50);
+
+window.addEventListener('load', catWalk);

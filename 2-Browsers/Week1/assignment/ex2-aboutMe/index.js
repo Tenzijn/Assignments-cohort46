@@ -9,7 +9,6 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 3. Look in the css file!
 ------------------------------------------------------------------------------*/
 
-// TODO add your JavaScript code here.
 const myData = ['Tenzijn', 'momo', 'Karze,Kham,Tibet'];
 const spans = document.querySelectorAll('span');
 const listItems = document.querySelectorAll('li');

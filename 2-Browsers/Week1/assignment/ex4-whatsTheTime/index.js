@@ -12,7 +12,6 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 ------------------------------------------------------------------------------*/
 const clock = document.querySelector('#time');
 function addCurrentTime() {
-  // TODO complete this function
   const now = new Date();
   const time = now.toLocaleTimeString(undefined, {
     hour: '2-digit',
@@ -23,5 +22,6 @@ function addCurrentTime() {
   console.log(time);
 }
 
-// TODO execute `addCurrentTime` when the browser has completed loading the page
-window.addEventListener('load', setInterval(addCurrentTime, 1000));
+setInterval(addCurrentTime, 1000);
+
+window.addEventListener('load', addCurrentTime);
