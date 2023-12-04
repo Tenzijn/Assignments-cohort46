@@ -1,1 +1,17 @@
 /* Write your style here */
+ul {
+  list-style: none;
+  display: flex;
+}
+
+.book {
+  padding: 10px;
+  margin-right: 10px;
+}
+.green-background {
+  background-color: green;
+}
+
+.red-background {
+  background-color: red;
+}
