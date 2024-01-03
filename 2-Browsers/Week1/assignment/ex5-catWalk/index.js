@@ -42,7 +42,7 @@ function catWalk() {
   // to get current position of cat
   const imgPosition = parseInt(catWalkImage.style.left);
   // shift cat by 10px left
-  catWalkImage.style.left = imgPosition + 10 + 'px';
+  catWalkImage.style.left = imgPosition + 8 + 'px';
   // if cat reaches the end of window, reset position to 0px but -250px to hide the cat and gives effect of coming from behind
   if (imgPosition > windowWidth) {
     catWalkImage.style.left = '-250px';
@@ -51,8 +51,7 @@ function catWalk() {
   // if cat reaches the middle of window, stop the cat and change image to dancing cat
   //this logic : there is only one time that position of cat before is less than half of window width and position of cat now is more than half of window width
   // I use this because since we are adding 10px after each interval, it is not possible to have exact position of half of window width
-  if (imgPositionTracker < windowWidth / 2 && imgPosition > windowWidth / 2) {
-    catWalkImage.style.left = windowWidth / 2 - 150 + 'px';
+  if (imgPositionTracker < windowWidth / 3 && imgPosition > windowWidth / 3) {
     imgPositionTracker = imgPosition;
     clearInterval(catWalkIntervalCaller);
     catWalkImage.setAttribute('src', catDanceImage);
