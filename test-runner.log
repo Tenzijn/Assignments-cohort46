@@ -1,0 +1,51 @@
+2024-01-15 07:25:25 info: ---------------------------------------------
+2024-01-15 07:25:25 info: >>> Running Unit Test `ex1-programmerFun` <<<
+2024-01-15 07:25:25 info: ---------------------------------------------
+2024-01-15 07:25:28 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-programmerFun.test.js --colors
+ FAIL  3-UsingAPIs/Week2/unit-tests/ex1-programmerFun.test.js
+  programmerFun
+    ✕ HTML should be syntactically valid (53 ms)
+    ✓ should have all TODO comments removed
+    ✓ should use `fetch()` (1 ms)
+    ✓ should use async/wait
+    ✓ should use try/catch
+
+  ● programmerFun › HTML should be syntactically valid
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: ""
+    Received: "
+    inline
+      11:2  error  <img> is missing required \"alt\" attribute  wcag/h37·
+    ✖ 1 problem (1 error, 0 warnings)
+    "
+
+      44 |   const { results } = htmlValidate.validateString(htmlText);
+      45 |   const validationReport = stylish(results);
+    > 46 |   expect(validationReport).toBe('');
+         |                            ^
+      47 | }
+      48 |
+      49 | module.exports = {
+
+      at toBe (test-runner/jsdom-helpers.js:46:28)
+      at Object.validateHTML (3-UsingAPIs/Week2/unit-tests/ex1-programmerFun.test.js:45:5)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 4 passed, 5 total
+Snapshots:   0 total
+Time:        1.712 s
+Ran all test suites matching /ex1-programmerFun.test.js/i.
+2024-01-15 07:25:29 error: *** Spell Checker Report ***
+
+
+2024-01-15 07:27:45 info: ---------------------------------------------
+2024-01-15 07:27:45 info: >>> Running Unit Test `ex1-programmerFun` <<<
+2024-01-15 07:27:45 info: ---------------------------------------------
+2024-01-15 07:27:47 info: All unit tests passed.
+2024-01-15 07:27:48 error: *** Spell Checker Report ***
+
+
