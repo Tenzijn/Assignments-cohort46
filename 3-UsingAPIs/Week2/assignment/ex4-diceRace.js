@@ -33,3 +33,8 @@ if (process.env.NODE_ENV !== 'test') {
   main();
 }
 module.exports = rollDice;
+
+// Answer to question 3:
+// The reason why some dice continue rolling is because the function rollDie() is not stopped when the first promise is resolved.
+// The function rollDie() is still running and will continue to run until all promises are resolved.
+// This is because the function rollDie() is not asynchronous.
