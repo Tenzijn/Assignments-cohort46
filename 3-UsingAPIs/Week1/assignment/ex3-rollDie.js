@@ -55,3 +55,4 @@ if (process.env.NODE_ENV !== 'test') {
 }
 module.exports = rollDie;
 
+// The problem does not continue. Because in this situation after 6 throws promise rejected and return an error. Code get into the catch block and end the execution.
