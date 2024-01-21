@@ -43,3 +43,5 @@ if (process.env.NODE_ENV !== 'test') {
   main();
 }
 module.exports = rollDice;
+
+//When a promise is rejected, it doesn't stop the execution of the asynchronous operations that were initiated before the rejection. Promises are settled asynchronously, and their rejections do not affect the execution of other asynchronous tasks that are already in progress.
